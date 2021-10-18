@@ -1,15 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Login.css';
+import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
+    const {signInUsingGoogle} = useAuth();
     return (
         <div className="container login-page">
             <div className="myCard">
                 <div className="row">
                     <div className="col-md-6">
                         <div className="myLeftCtn">
-                            <form className="myForm text-center">
+                            <form onSubmit=""
+                                className="myForm text-center">
                                 <header>Please Login</header>
 
                                 <div className="form-group my-3">
@@ -28,7 +31,7 @@ const Login = () => {
 
                                 <hr />
                                 <h4 className="text-center text-secondary">OR</h4>
-                                <button className=""> Sign in With Google</button>
+                                <button onClick={signInUsingGoogle} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign in With Google</button>
                             </form>
                         </div>
 

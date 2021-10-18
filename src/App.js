@@ -8,37 +8,40 @@ import Header from './Pages/Shared/Header/Header';
 import Registration from './Pages/Registration/Registration';
 import ServiceDetails from './Pages/Services/ServiceDetails/ServiceDetails';
 import Doctors from './Pages/Doctors/Doctors/Doctors';
+import AuthProvider from './context/AuthProvider';
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="/register">
-            <Registration></Registration>
-          </Route>
-          <Route path="/doctors">
-            <Doctors></Doctors>
-          </Route>
-          <Route path="/ordernow/:id">
-            <ServiceDetails></ServiceDetails>
-          </Route>
-          <Route exact path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Registration></Registration>
+            </Route>
+            <Route path="/doctors">
+              <Doctors></Doctors>
+            </Route>
+            <Route path="/ordernow/:id">
+              <ServiceDetails></ServiceDetails>
+            </Route>
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }
