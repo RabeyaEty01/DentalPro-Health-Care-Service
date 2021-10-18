@@ -1,0 +1,11 @@
+
+.photo-frame{
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    
+}
+.photo-frame:hover .photo{
+    transform: scale(1.5);
+    transition: transform 2s ease-in-out;
+}

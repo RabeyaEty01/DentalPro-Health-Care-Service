@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login/Login';
 import Header from './Pages/Shared/Header/Header';
 import Registration from './Pages/Registration/Registration';
 import ServiceDetails from './Pages/Services/ServiceDetails/ServiceDetails';
+import Doctors from './Pages/Doctors/Doctors/Doctors';
 
 
 function App() {
@@ -27,7 +28,10 @@ function App() {
           <Route path="/register">
             <Registration></Registration>
           </Route>
-          <Route path="/ordernow/:serviceId">
+          <Route path="/doctors">
+            <Doctors></Doctors>
+          </Route>
+          <Route path="/ordernow/:id">
             <ServiceDetails></ServiceDetails>
           </Route>
           <Route exact path="*">

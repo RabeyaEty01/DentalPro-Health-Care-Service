@@ -14,10 +14,9 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#services">Services</Nav.Link>
-                        <Nav.Link href="#footer">Footer</Nav.Link>
-                        <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} to="/doctors">Our Doctors</Nav.Link>
+                        <Nav.Link as={HashLink} to="/about">About Us</Nav.Link>
                         <Nav.Link as={HashLink} to="/login">
                             <Button variant=" btn-sign rounded-pill px-4 mx-3 text-white"><i class="fas fa-sign-in-alt text-white"></i> Sign In</Button>
                         </Nav.Link>

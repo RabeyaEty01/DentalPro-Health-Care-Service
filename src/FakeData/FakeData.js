@@ -16,7 +16,7 @@ const services = [
         img: "https://i.ibb.co/wLt1159/2.jpg"
     },
     {
-        id: 4.5,
+        id: 4,
         name: "Cosmetic Dentistry",
         price: 550,
         rating: 4,
