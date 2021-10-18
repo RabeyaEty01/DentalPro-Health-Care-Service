@@ -6,13 +6,14 @@ import NotFound from './Pages/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
 import Header from './Pages/Shared/Header/Header';
 import Registration from './Pages/Registration/Registration';
+import ServiceDetails from './Pages/Services/ServiceDetails/ServiceDetails';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header></Header>
+        <Header></Header>
         <Switch>
           <Route exact path="/">
             <Home></Home>
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Registration></Registration>
+          </Route>
+          <Route path="/ordernow/:serviceId">
+            <ServiceDetails></ServiceDetails>
           </Route>
           <Route exact path="*">
             <NotFound></NotFound>

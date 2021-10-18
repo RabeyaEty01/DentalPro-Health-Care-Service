@@ -37,8 +37,8 @@ const Login = () => {
                     <div className="col-md-6">
                         <div className="myRightCtn">
                             <div className="box">
-                                <header>Hello World!</header>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta asperiores aperiam hic perferendis at ipsum voluptas, eaque est inventore, temporibus autem maiores unde! Quos incidunt amet expedita sit deserunt optio.</p>
+                                <header>Dental & Oral Health</header>
+                                <p>Dental and oral health is an essential part of your overall health and well-being.Maintaining healthy teeth and gums is a lifelong commitment. The earlier you learn proper oral hygiene habits — such as brushing, flossing, and limiting your sugar intake — the easier it’ll be to avoid costly dental procedures and long-term health issues.</p>
                                 <input type="button" className="butt_out" name="" value="Learn More" id="" />
                             </div>
                         </div>
