@@ -47,7 +47,7 @@ const Login = () => {
 
                                 <hr />
                                 <h4 className="text-center text-secondary">OR</h4>
-                                <button onClick={handleGoogleLogin} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign in With Google</button>
+                                <button onClick={handleGoogleLogin} className="border-0 rounded-pill py-2  w-100 bg-warning shadow"><i class="fab fa-google "></i> Sign in With Google</button>
                             </form>
                         </div>
 

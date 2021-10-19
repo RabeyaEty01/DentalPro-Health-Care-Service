@@ -58,7 +58,7 @@
     margin-bottom: 100px;
 }
 .myLeftCtn .myInput{
-    width: 230px;
+    width: 280px;
     border-radius: 25px;
     padding: 10px;
     padding-left: 50px;
@@ -76,7 +76,7 @@
 .myLeftCtn .btn-button{
     background: linear-gradient(45deg, #4087e6d7, #9b00e8);
     color: #fff;
-    width: 230px;
+    width: 280px;
     border: none;
     border-radius: 25px;
     padding:10px;

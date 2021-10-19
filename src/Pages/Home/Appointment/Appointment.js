@@ -13,7 +13,7 @@ const Appointment = () => {
                     <div className="choose-card card  h-100 p-4 border-0 myLeftCtn myLeftCtn-2">
                         <form
                             className="myForm text-center">
-                            <h1 className="fw-bold text-dark">Make An Appoinment</h1>
+                            <h3 className="fw-bold text-dark">Make An Appoinment</h3>
 
                             <div
                                 className="form-group my-3 ">

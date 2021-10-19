@@ -3,7 +3,7 @@ import './FAQ.css';
 
 const FAQ = () => {
     return (
-        <div className="px-5">
+        <div className="">
             <h1 class="section-title text-center my-3 fw-bold">-Frequently Asked <span className="service-text">Questions-</span>
             </h1>
             <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1 g-4">

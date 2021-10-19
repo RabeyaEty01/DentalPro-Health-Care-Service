@@ -10,7 +10,7 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar bg="light" sticky="top">
+            <Navbar bg="light" sticky="top" collapseOnSelect expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
                         <img className="justify-content-start" height="50px" width="300px" src={logo} alt="" />
