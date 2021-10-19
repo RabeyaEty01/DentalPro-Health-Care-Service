@@ -21,14 +21,16 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/doctors">Our Doctors</Nav.Link>
                         <Nav.Link as={HashLink} to="/about">About Us</Nav.Link>
 
-                        {user.displayName &&
+                        {user.email &&
                             <Navbar.Text>
-                                Signed in as: <a href="#login
-                            ">
-                                    {user.displayName}
-                                </a>
+                                Signed in as: 
+                                    <span className="fw-bold"> {user.email}</span>
+                                   <span>  <img width="49px" height="49px" className="rounded-circle" src={user.photoURL} alt="" /></span>
                             </Navbar.Text>
+
                         }
+
+
 
                         {
                             user.email ?

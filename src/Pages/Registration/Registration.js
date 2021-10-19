@@ -1,26 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
 
 const Registration = () => {
-    const {signInUsingGoogle} = useAuth();
+    const { signInUsingGoogle, handleEmailChange,
+        handlePasswordChange, handleRegister, error } = useAuth();
+
+
     return (
         <div className="container login-page">
             <div className="myCard">
                 <div className="row">
                     <div className="col-md-6">
                         <div className="myLeftCtn">
-                            <form  onClick="" className="myForm text-center">
+                            <form onSubmit={handleRegister} className="myForm text-center">
                                 <header>Create new account</header>
                                 <div className="form-group my-3">
                                     <i className="fas fa-envelope"></i>
-                                    <input className="myInput" placeholder="Email" type="email" name="" id="" required />
+                                    <input onBlur={handleEmailChange} className="myInput" placeholder="Email" type="email" name="" id="" required />
                                     <div className="invalid-feedback">Please fill out this field.
                                     </div>
                                 </div>
 
                                 <div className="form-group my-3">
                                     <i className="fas fa-lock"></i>
-                                    <input className="myInput" placeholder="Password" type="password" name="" id="password" required />
+                                    <input onBlur={handlePasswordChange} className="myInput" placeholder="Password" type="password" name="" id="password" required />
                                 </div>
 
                                 <div className="form-group my-3">
@@ -28,7 +31,8 @@ const Registration = () => {
                                     <input className="myInput" placeholder="Re-enter Password" type="password" name="" id="password" required />
                                 </div>
 
-                              
+                                <div className="text-danger">{error}</div>
+
                                 <input type="submit" className="btn-button " value="CREATE ACCOUNT" name="" id="" />
 
                                 <hr />
@@ -43,8 +47,8 @@ const Registration = () => {
                     <div className="col-md-6">
                         <div className="myRightCtn">
                             <div className="box">
-                                <header>Hello World!</header>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta asperiores aperiam hic perferendis at ipsum voluptas, eaque est inventore, temporibus autem maiores unde! Quos incidunt amet expedita sit deserunt optio.</p>
+                                <header>Dental & Oral Health</header>
+                                <p>Dental and oral health is an essential part of your overall health and well-being.Maintaining healthy teeth and gums is a lifelong commitment. The earlier you learn proper oral hygiene habits — such as brushing, flossing, and limiting your sugar intake — the easier it’ll be to avoid costly dental procedures and long-term health issues.</p>
                                 <input type="button" className="butt_out" name="" value="Learn More" id="" />
                             </div>
                         </div>
