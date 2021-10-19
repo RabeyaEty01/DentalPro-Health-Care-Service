@@ -5,26 +5,29 @@ import useAuth from '../../../Hooks/useAuth';
 
 
 const Login = () => {
-    const {signInUsingGoogle} = useAuth();
+    const {signInUsingGoogle, error, handleEmailChange,
+        handlePasswordChange, handleProcessLogin} = useAuth();
     return (
         <div className="container login-page">
             <div className="myCard">
                 <div className="row">
                     <div className="col-md-6">
                         <div className="myLeftCtn">
-                            <form onSubmit=""
+                            <form onSubmit={ handleProcessLogin}
                                 className="myForm text-center">
                                 <header>Please Login</header>
 
                                 <div className="form-group my-3">
                                     <i className="fas fa-envelope"></i>
-                                    <input className="myInput" placeholder="Email" type="email" name="" id="" required />
+                                    <input onBlur={handleEmailChange}className="myInput" placeholder="Email" type="email" name="" id="" required />
                                 </div>
 
-                                <div className="form-group my-3">
+                                <div onBlur={ handlePasswordChange}className="form-group my-3">
                                     <i className="fas fa-lock"></i>
                                     <input className="myInput" placeholder="Password" type="password" name="" id="password" required />
                                 </div>
+
+                                <div className="text-danger">{error}</div>
 
                                 <input type="submit" className="btn-button my-3" value="SIGN IN" name="" id="" />
                                 <br />

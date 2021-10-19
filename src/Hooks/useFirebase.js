@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
 
@@ -9,11 +9,12 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error,setError]=useState("");
+    const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
 
+    //registration part
     const handleEmailChange = e => {
         setEmail(e.target.value);
     }
@@ -26,24 +27,38 @@ const useFirebase = () => {
         e.preventDefault();
         if (e.target.value < 6) {
             setError("Password Must be at least 6 characters long.")
-           return;
+            return;
         }
-        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
+        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
             setError('Password Must Contain 2 Upper Case');
         }
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-               setUser(result.user);
-               setError('');
-                
+                setUser(result.user);
+                setError('');
+
             })
-            .catch(error=>{
+            .catch(error => {
                 setError(error.message);
             })
-       
+
 
     }
 
+    //login part
+
+    const handleProcessLogin = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                setUser(result.user);
+                console.log(result.user)
+                setError('');
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
 
 
 
@@ -87,7 +102,8 @@ const useFirebase = () => {
         handleEmailChange,
         handlePasswordChange,
         handleRegister,
-        error
+        error,
+        handleProcessLogin
     }
 }
 
