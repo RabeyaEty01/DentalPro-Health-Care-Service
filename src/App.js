@@ -10,6 +10,7 @@ import ServiceDetails from './Pages/Services/ServiceDetails/ServiceDetails';
 import Doctors from './Pages/Doctors/Doctors/Doctors';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Blogs from './Pages/Blogs/Blogs/Blogs';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/doctors">
               <Doctors></Doctors>
+            </Route>
+            <Route path="/blog">
+              <Blogs></Blogs>
             </Route>
             <PrivateRoute exact path="/ordernow/:id">
               <ServiceDetails></ServiceDetails>
