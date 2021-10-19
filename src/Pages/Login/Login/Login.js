@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory ,useLocation} from 'react-router-dom';
 import './Login.css';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -7,6 +7,18 @@ import useAuth from '../../../Hooks/useAuth';
 const Login = () => {
     const {signInUsingGoogle, error, handleEmailChange,
         handlePasswordChange, handleProcessLogin} = useAuth();
+    const location =useLocation();
+    const history = useHistory();
+    const redirect_uri= location.state?.from ||'/home';
+        
+        const handleGoogleLogin =()=>{
+             signInUsingGoogle()
+              .then(result => {
+               history.push(redirect_uri);
+            })
+           
+        }
+
     return (
         <div className="container login-page">
             <div className="myCard">
@@ -35,7 +47,7 @@ const Login = () => {
 
                                 <hr />
                                 <h4 className="text-center text-secondary">OR</h4>
-                                <button onClick={signInUsingGoogle} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign in With Google</button>
+                                <button onClick={handleGoogleLogin} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign in With Google</button>
                             </form>
                         </div>
 
