@@ -23,9 +23,9 @@ const Header = () => {
 
                         {user.email &&
                             <Navbar.Text>
-                                Signed in as: 
-                                    <span className="fw-bold"> {user.email}</span>
-                                   <span>  <img width="49px" height="49px" className="rounded-circle" src={user.photoURL} alt="" /></span>
+                                Signed in as:
+                                <span className="fw-bold"> {user.email}</span>
+                                <span>  <img width="49px" height="49px" className="rounded-circle" src={user.photoURL} alt="" /></span>
                             </Navbar.Text>
 
                         }
@@ -38,9 +38,15 @@ const Header = () => {
                                     <Button onClick={logOut} variant="danger rounded-pill px-4 text-white"><i class="fas fa-sign-out-alt text-white"></i> Sign Out</Button>
                                 </Nav.Link>
                                 :
-                                <Nav.Link as={HashLink} to="/login">
-                                    <Button variant=" btn-sign rounded-pill px-4 text-white"><i class="fas fa-sign-in-alt text-white"></i> Sign In</Button>
-                                </Nav.Link>
+                                <>
+                                    <Nav.Link as={HashLink} to="/login">
+                                        <Button variant=" btn-sign rounded-pill px-4 text-white"><i class="fas fa-sign-in-alt text-white"></i> Sign In</Button>
+                                    </Nav.Link>
+
+                                    <Nav.Link as={HashLink} to="/register">
+                                        <Button variant=" btn-sign rounded-pill px-4 text-white"><i class="fas fa-sign-in-alt text-white"></i> Sign Up</Button>
+                                    </Nav.Link>
+                                </>
                         }
 
 

@@ -1,9 +1,26 @@
 import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
 
 const Registration = () => {
     const { signInUsingGoogle, handleEmailChange,
         handlePasswordChange, handleRegister, error } = useAuth();
+
+        const location =useLocation();
+        const history = useHistory();
+        const redirect_uri= location.state?.from ||'/home';
+            
+            const handleGoogleLogin =()=>{
+                 signInUsingGoogle()
+                  .then(result => {
+                   history.push(redirect_uri);
+                })
+               
+            }
+
+    
+    
+
 
 
     return (
@@ -37,7 +54,7 @@ const Registration = () => {
 
                                 <hr />
                                 <h4 className="text-center text-secondary">OR</h4>
-                                <button onClick={signInUsingGoogle} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign Up With Google</button>
+                                <button onClick={handleGoogleLogin} className="border-0 rounded-pill p-2 w-75 bg-warning shadow"><i class="fab fa-google "></i> Sign Up With Google</button>
 
                             </form>
                         </div>
