@@ -5,6 +5,7 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([]);
 
+
     useEffect(() => {
         const url = './services.json';
         fetch(url)

@@ -16,10 +16,12 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption className="hero-text">
-                        <small>Care For Lifetime</small>
-                        <h1>Let Us Brighten Your Smile</h1>
-                        <p>Dramatically maintain clicks and mortar solutions without functional solutions.</p>
-                        <p>Collaboratively expedite quality products via client focused results.</p>
+                        <div className="container">
+                            <small>Care For Lifetime</small>
+                            <h1>Let Us Brighten Your Smile</h1>
+                            <p>Dramatically maintain clicks and mortar solutions without functional solutions.</p>
+                            <p>Collaboratively expedite quality products via client focused results.</p>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -30,11 +32,13 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption className="hero-text">
-                        <small>Care For Your Smile</small>
-                        <h1>
-                            Committed To Excellence</h1>
-                        <p>Competently parallel task researched data and process improvements.</p>
-                        <p>Collaboratively expedite quality products via client focused results.</p>
+                        <div className="container">
+                            <small>Care For Your Smile</small>
+                            <h1>
+                                Committed To Excellence</h1>
+                            <p>Competently parallel task researched data and process improvements.</p>
+                            <p>Collaboratively expedite quality products via client focused results.</p>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -45,11 +49,13 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption className="hero-text">
-                        <small>Committed To Excellence</small>
-                        <h1>
-                            Personalized &amp; Comfortable</h1>
-                        <p>Competently parallel task researched data and process improvements.</p>
-                        <p>Collaboratively expedite quality products via client focused results.</p>
+                        <div className="container">
+                            <small>Committed To Excellence</small>
+                            <h1>
+                                Personalized &amp; Comfortable</h1>
+                            <p>Competently parallel task researched data and process improvements.</p>
+                            <p>Collaboratively expedite quality products via client focused results.</p>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

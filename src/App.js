@@ -13,6 +13,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Blogs from './Pages/Blogs/Blogs/Blogs';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -38,6 +39,7 @@ function App() {
             <PrivateRoute path="/blog">
               <Blogs></Blogs>
             </PrivateRoute>
+           
             <PrivateRoute exact path="/ordernow/:id">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>

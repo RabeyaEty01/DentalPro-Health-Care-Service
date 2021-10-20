@@ -40,7 +40,7 @@ const ServiceDetails = () => {
                         <p class="card-text text-secondary">{singleServiceData?.description}</p>
 
                         <Link to="#">
-                            <span className="border rounded-pill px-5 py-2 bg-danger text-white fw-bold"> <i className="fas fa-arrow-left"></i> Order Now</span>
+                            <span className="border rounded-pill px-5 py-2 bg-danger text-white fw-bold"> <i className="fas fa-shopping-cart"></i> Order Now</span>
                         </Link>
                     </div>
                 </div>
