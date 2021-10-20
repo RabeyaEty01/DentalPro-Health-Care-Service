@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
 
@@ -9,18 +9,33 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [photo, setPhoto] = useState("");
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+   
+    
+    
 
     const auth = getAuth();
 
     //registration part
+   
+
     const handleEmailChange = e => {
         setEmail(e.target.value);
     }
     const handlePasswordChange = e => {
         setPassword(e.target.value);
 
+    }
+
+    const handleNameChange = e => {
+        setName(e.target.value);
+    }
+
+    const handlePhotoURLChange = e => {
+        setPhoto(e.target.value);
     }
 
     const handleRegister = (e) => {
@@ -35,7 +50,10 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user);
+                console.log(result.user);
                 setError('');
+                verifyEmail();
+                setUserName();
 
             })
             .catch(error => {
@@ -44,6 +62,26 @@ const useFirebase = () => {
 
 
     }
+
+    const setUserName = () => {
+        updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+            .then(result => {
+
+            })
+
+    }
+
+    const verifyEmail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(result => {
+                console.log(result);
+            })
+    }
+
+
+
 
     //login part
 
@@ -67,7 +105,7 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
 
         return signInWithPopup(auth, googleProvider)
-           
+
     }
 
     //observe user state changed
@@ -96,11 +134,15 @@ const useFirebase = () => {
         logOut,
         isLoading,
         signInUsingGoogle,
+        handleNameChange,
+        handlePhotoURLChange,
         handleEmailChange,
         handlePasswordChange,
         handleRegister,
         error,
-        handleProcessLogin
+        handleProcessLogin,
+      
+
     }
 }
 

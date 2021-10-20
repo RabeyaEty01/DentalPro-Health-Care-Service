@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../../images/logo-2.png';
@@ -8,6 +7,8 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const { user, logOut } = useAuth();
+    
+
     return (
         <>
             <Navbar bg="light" sticky="top" collapseOnSelect expand="lg">
@@ -24,7 +25,7 @@ const Header = () => {
                         {user.email &&
                             <Navbar.Text>
                                 Signed in as:
-                                <span className="fw-bold"> {user.email}</span>
+                                <span className="fw-bold"> {user.displayName}</span>
                                 <span>  <img width="49px" height="49px" className="rounded-circle" src={user.photoURL} alt="" /></span>
                             </Navbar.Text>
 
